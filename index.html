@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angar solution</title>
+    <style>
+        @keyframes colorChange {
+            0% { color: #ff00ff; }
+            50% { color: #00ffff; }
+            100% { color: #ff00ff; }
+        }
+        
+        @keyframes neonTextGlow {
+            0% { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
+            50% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+            100% { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+            margin: 0;
+            padding: 20px;
+            padding-top: 100px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        
+        /* Heading Styles */
+        .main-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: glow 3s linear infinite;
+    position: fixed; /* Fixed at top */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Optional: semi-transparent black */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+
+        .container {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0ff;
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
+        }
+        h2 {
+            text-align: center;
+            color: #ff00ff;
+            animation: colorChange 3s infinite alternate;
+            display: block;
+        }
+        .code-block {
+            background: #222;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 0 5px #ff00ff;
+            transition: 0.3s;
+        }
+        .copy-btn:hover {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        .question-text {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            animation: neonTextGlow 2s infinite alternate;
+            padding: 10px;
+            border-radius: 5px;
+            color: #00ff00;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+            .copy-btn {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">Code by Aradhy</h1>
+    <div class="container">
+        <!-- Question 1 -->
+        <h2 id="question-heading-1"></h2>
+        <p class="question-text" id="question-text-1">The Treasure Hunt</p>
+        <h2 id="solution-heading-1"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-1')">Copy</button>
+            <pre id="code-1"><code>void solution()
+{
+    int a=0,b=0;
+    scanf("%d",&a);
+    int min=100,max=0;
+    int arr[a];
+    for(int i=0;i&lt;a;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(int i=0;i&lt;a;i++){
+        b=arr[i];
+        if(b &lt; min){
+            min=b;
+        }else if(b &gt; max){
+            max=b;
+        }
+    }
+    printf("%d %d",min,max);
+}</code></pre>
+        </div>
+
+        <!-- Question 2 -->
+        <h2 id="question-heading-2"></h2>
+        <p class="question-text" id="question-text-2">The Magical Number</p>
+        <h2 id="solution-heading-2"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-2')">Copy</button>
+            <pre id="code-2"><code>void solution()
+{
+    int num;
+    scanf("%d",&num);
+    if(num%3==0 & num%5==0){
+        printf("Magical Number");
+    }else if(num%3==0){
+        printf("Magic Three");
+    }else if(num%5==0){
+        printf("Magic Five");
+    }else{
+        printf("Not Magic");
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 3 -->
+        <h2 id="question-heading-3"></h2>
+        <p class="question-text" id="question-text-3">The Reverse Challenge</p>
+        <h2 id="solution-heading-3"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-3')">Copy</button>
+            <pre id="code-3"><code>void solution()
+{
+    int num;
+    scanf("%d",&num);
+    for(;num>0;num--){
+        printf("%d ",num);
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 4 -->
+        <h2 id="question-heading-4"></h2>
+        <p class="question-text" id="question-text-4">The Lucky Sum</p>
+        <h2 id="solution-heading-4"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-4')">Copy</button>
+            <pre id="code-4"><code>void solution()
+{
+    int num,sum=0;
+    scanf("%d",&num);
+    for(int i=0;i&lt;=num;i+=2){
+        sum+=i;
+    }
+    printf("%d",sum);
+}</code></pre>
+        </div>
+
+        <!-- Question 5 -->
+        <h2 id="question-heading-5"></h2>
+        <p class="question-text" id="question-text-5">Prime Detective</p>
+        <h2 id="solution-heading-5"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-5')">Copy</button>
+            <pre id="code-5"><code>void solution()
+{
+    int num,prime=1;
+    scanf("%d",&num);
+    for(int i=2;i&lt;=num/2;i++){
+        if(num%i==0){
+            prime=0;
+            break;
+        }
+    }
+    if(prime){
+        printf("Prime");
+    }else{
+        printf("Not Prime");
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 6 -->
+        <h2 id="question-heading-6"></h2>
+        <p class="question-text" id="question-text-6">The Perfect Cube</p>
+        <h2 id="solution-heading-6"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-6')">Copy</button>
+            <pre id="code-6"><code>void solution()
+{
+    int num,c=1;
+    scanf("%d",&num);
+    for(int i=2;i&lt;num/2;i++){
+        if(i*i*i==num){
+            printf("Perfect Cube");
+            c=0;
+        }
+    }
+    if(c){
+        printf("Not a Cube");
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 7 -->
+        <h2 id="question-heading-7"></h2>
+        <p class="question-text" id="question-text-7">Digit Sum Challenge</p>
+        <h2 id="solution-heading-7"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-7')">Copy</button>
+            <pre id="code-7"><code>void solution()
+{
+    int num,sum=0,b;
+    scanf("%d",&num);
+    while(num>0){
+        b=num%10;
+        sum+=b;
+        num=num/10;
+    }
+    printf("%d",sum);
+}</code></pre>
+        </div>
+
+        <!-- Question 8 -->
+        <h2 id="question-heading-8"></h2>
+        <p class="question-text" id="question-text-8">Right-Angled Triangle</p>
+        <h2 id="solution-heading-8"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-8')">Copy</button>
+            <pre id="code-8"><code>void solution()
+{
+    int num;
+    scanf("%d",&num);
+    for(int i=1;i&lt;=num;i++){
+        for(int j=1;j&lt;=i;j++){
+            printf("*");
+        }
+    printf("\n");
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 9 -->
+        <h2 id="question-heading-9"></h2>
+        <p class="question-text" id="question-text-9">The Missing Attendance</p>
+        <h2 id="solution-heading-9"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-9')">Copy</button>
+            <pre id="code-9"><code>void solution()
+{
+    int a,b,c=0;
+    scanf("%d",&a);
+    int arr[a];
+    for(int i=0;i&lt;a;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(int i=1;i&lt;a;i++){
+        b=arr[i];
+        if(arr[i]!=arr[c]+1){
+            printf("%d",arr[i]+1);
+            break;
+        }
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 10 -->
+        <h2 id="question-heading-10"></h2>
+        <p class="question-text" id="question-text-10">The Secret Vault Code</p>
+        <h2 id="solution-heading-10"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-10')">Copy</button>
+            <pre id="code-10"><code>void solution()
+{
+    int num,sum=0,a;
+    scanf("%d",&num);
+    while(num>0){
+        sum+=num%10;
+        num/=10;
+    }
+    if(sum%2==0){
+        printf("Access Granted");
+    }else{
+        printf("Access Denied");
+    }
+}</code></pre>
+        </div>
+
+        <!-- Question 11 -->
+        <h2 id="question-heading-11"></h2>
+        <p class="question-text" id="question-text-11">The Count of Prime Digits</p>
+        <h2 id="solution-heading-11"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-11')">Copy</button>
+            <pre id="code-11"><code>void solution()
+                {
+                   int num,tem,count=0;
+                   scanf("%d",&num);
+                   while(num>0){
+                       tem=num%10;
+                       if (tem==2||tem==3||tem==5||tem==7){
+                           count++;
+                       }
+                       num/=10;
+                   }
+                   printf("%d",count);
+                }</code></pre>
+        </div>
+
+        <!-- Question 12 -->
+        <h2 id="question-heading-12"></h2>
+        <p class="question-text" id="question-text-12">The Strongman’s Factorial</p>
+        <h2 id="solution-heading-12"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-12')">Copy</button>
+            <pre id="code-12"><code>void solution()
+                {
+                    int num;
+                    long long int fact=1,temp=0;
+                    scanf("%d",&num);
+                    if(num&lt;10){
+                        for(int i=1;i&lt;(num+1);i++){
+                            fact*=i;
+                            temp=fact;
+                        }
+                    }
+                    else{
+                        for(int i=1;i&lt;(num+1);i++){
+                            fact*=i;
+                        }
+                        while(fact>0){
+                            temp+=fact%10;
+                            fact/=10;
+                        }
+                    }
+                    printf("%ld",temp);
+                }</code></pre>
+        </div>
+
+        <!-- Question 13 -->
+        <h2 id="question-heading-13"></h2>
+        <p class="question-text" id="question-text-13">The Hidden Prime Key</p>
+        <h2 id="solution-heading-13"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-13')">Copy</button>
+            <pre id="code-13"><code>void solution()
+                {
+                    int num, yes = 1, temp, sum;
+                
+                    scanf("%d", &num);
+                
+                    while (yes) {
+                        temp = 1;
+                
+                        for (int i = 2; i &lt;= num / 2; i++) {
+                            if (num % i == 0) {
+                                num++;
+                                temp = 0;
+                                break;
+                            }
+                        }
+                
+                        if (temp) {
+                            sum = 0;
+                            int temp_num = num;
+                            while (temp_num > 0) {
+                                sum += temp_num % 10;
+                                temp_num /= 10;
+                            }
+                
+                            temp = 1;
+                
+                            for (int i = 2; i &lt;= sum / 2; i++) {
+                                if (sum % i == 0) {
+                                    num++;
+                                    temp = 0;
+                                    break;
+                                }
+                            }
+                
+                            if (temp) {
+                                yes = 0;
+                            }
+                        }
+                    }
+                
+                    printf("%d\n", num);
+                
+                }</code></pre>
+        </div>
+
+        <!-- Question 14 -->
+        <h2 id="question-heading-14"></h2>
+        <p class="question-text" id="question-text-14">Armstrong Number</p>
+        <h2 id="solution-heading-14"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-14')">Copy</button>
+            <pre id="code-14"><code>void solution()
+                {
+                    int num, temp, digit = 0, k, sum = 0, j;
+                    scanf("%d", &num);
+                    
+                    temp = num;
+                    while (temp > 0) {
+                        temp /= 10;
+                        digit++;
+                    }
+                
+                    temp = num;
+                    while (temp > 0) {
+                        k = temp % 10;
+                        j = 1;
+                        for (int i = 0; i &lt; digit; i++) {
+                            j *= k;
+                        }
+                        sum += j;
+                        temp /= 10;
+                    }
+                
+                    if (sum == num)
+                        printf("Armstrong");
+                    else
+                        printf("Not Armstrong");
+                }</code></pre>
+        </div>
+
+        <!-- Question 15 -->
+        <h2 id="question-heading-15"></h2>
+        <p class="question-text" id="question-text-15">The Magic Mirror</p>
+        <h2 id="solution-heading-15"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-15')">Copy</button>
+            <pre id="code-15"><code>void solution()
+                {
+                   int num,prime=1,rev=0,temp,num1;
+                   scanf("%d",&num);
+                   for(int i=2;i&lt;=num/2;i++){
+                       if(num%i==0){
+                           prime=0;
+                           break;
+                       }
+                   }
+                   num1=num;
+                   if(prime){
+                        while(num>0){
+                            temp=num%10;
+                            rev=rev*10+temp;
+                            num/=10;
+                        }
+                        for(int i=2;i&lt;=rev/2;i++){
+                        if(rev%i==0){
+                           prime=0;
+                           break;
+                       }
+                   }
+                    }
+                    if(prime){
+                    printf("%d",rev);
+                   }
+                   else{
+                       printf("%d",num1);
+                   }
+                }
+                </code></pre>
+        </div>
+
+        <!-- Question 16 -->
+        <h2 id="question-heading-16"></h2>
+        <p class="question-text" id="question-text-16">The Gold Collector</p>
+        <h2 id="solution-heading-16"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-16')">Copy</button>
+            <pre id="code-16"><code>void solution()
+                {
+                 int l,r,sum=0;
+                 scanf("%d %d",&l,&r);
+                 for(;l&lt;r;l++){
+                     int prime=1;
+                     for(int i=2;i&lt;=l/2;i++){
+                         if(l%i==0){
+                            prime=0;
+                            break;
+                         }
+                     }
+                     if(prime){
+                        sum+=l; 
+                     }
+                 }
+                 printf("%d",sum);
+                }</code></pre>
+        </div>
+
+        <!-- Question 17 -->
+        <h2 id="question-heading-17"></h2>
+        <p class="question-text" id="question-text-17">	
+            The Time Machine Palindrome</p>
+        <h2 id="solution-heading-17"></h2>
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode('code-17')">Copy</button>
+            <pre id="code-17"><code>void solution()
+                {
+                  int year,yes=1,rem,tem;
+                  scanf("%d",&year);
+                  while(yes){
+                    int n=0;
+                    tem=year;
+                    while(tem>0){
+                        rem=tem%10;
+                        n=n*10+rem;
+                        tem/=10;
+                    }
+                    if(n==year){
+                        yes=0;
+                        printf("%d",n);
+                        break;
+                    }
+                    year++;
+                  }
+                }</code></pre>
+        </div>
+    </div>
+    <script>
+        function copyCode(id) {
+            const codeElement = document.querySelector(`#${id} code`);
+            if (!codeElement) {
+                alert("Code block not found!");
+                return;
+            }
+            navigator.clipboard.writeText(codeElement.textContent)
+                .then(() => alert("Code copied to clipboard!"))
+                .catch(() => alert("Failed to copy code"));
+        }
+        
+        function typeEffect(element, text, speed) {
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '<span style="font-weight: bold; font-size: 25px;">|</span>';
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    setTimeout(() => eraseEffect(element, text, speed), 1500);
+                }
+            }
+            type();
+        }
+        
+        function eraseEffect(element, text, speed) {
+            let i = text.length;
+            function erase() {
+                if (i > 0) {
+                    element.innerHTML = text.substring(0, i - 1) + '<span style="font-weight: bold; font-size: 25px; display: inline-block; width: 1px; height: 30px;">|</span>';
+                    i--;
+                    setTimeout(erase, speed);
+                } else {
+                    setTimeout(() => typeEffect(element, text, speed), 500);
+                }
+            }
+            erase();
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            // Apply typewriter effect to all headings
+            for (let i = 1; i <= 17; i++) {
+                typeEffect(document.getElementById(`question-heading-${i}`), "Question " + i, 100);
+                typeEffect(document.getElementById(`solution-heading-${i}`), "Solution " + i, 100);
+            }
+        });
+    </script>
+</body>
+</html>
